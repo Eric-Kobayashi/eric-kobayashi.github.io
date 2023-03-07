@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    margin: -5px;
+    padding: 0;
+}
+
+.title-bar {
+    display: flex;
+    background-color: #43281c;
+    color: #fbf2c0;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    margin: -10px;
+}
+
+.title-logo {
+    max-width: 25px;
+    max-height: 25px;
+    margin-right: 6px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(-10deg); }
+    100% { transform: rotate(10deg); }
+}
+
+.title-logo:hover {
+    animation: spin 0.25s ease 4;
+}
+
+.title-element {
+    display: inline;
+    font-size: 24px;
+}
+
+.central-widget {
+    display: grid;
+    padding: 30px 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "left-column top-right-column"
+    "left-column bottom-right-column";
+}
+
+.block-widget {
+    background-color: #eee1d5;
+    padding: 15px 15px 15px 15px;
+    margin: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+}
+
+.widget-title {
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    color: #885a2d;
+}
+
+.item-widget {
+    grid-area: left-column;
+}
+
+.item-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.item-content {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-areas: 
+    "left-column mid-column right-column"
+    ". bottom-row .";
+    border-bottom: #d7bda8 2px solid;
+    padding: 10px 0;
+}
+
+.item-content:last-child {
+    border-bottom: none;
+}
+
+
+.item-number {
+    grid-area: left-column;
+}
+
+.item-name {
+    font-weight: 800;
+    grid-area: mid-column;
+}
+
+.item-price {
+    font-weight: 800;
+    grid-area: right-column;
+}
+
+.item-addon {
+    color: #B08968;
+    font-size: 15px;
+    text-transform: capitalize;
+    grid-area: bottom-row;
+}
+
+.addon-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.addon-item {
+    margin: 5px 0;
+}
+
+.addon-item:last-child {
+    margin: 0;
+}
+
+.name-widget {
+    grid-area: top-right-column;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-label {
+    font-weight: 400;
+    font-size: 12px;
+    position: absolute;
+    top: -2px;
+    left: 25px;
+    padding: 4px;
+    color: #885a2d;
+    background-color: #eee1d5;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #885a2d;
+    border-radius: 25px;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.input-field.cvv-field {
+    width: 40%;
+}
+
+.payment-widget {
+    grid-area: bottom-right-column;
+}
+
+.cashier-widget {
+    display: flex;
+    margin: 20px 0;
+    align-content: center;
+    justify-content: center;
+}
+
+.cashier-table {
+    width: 40%;
+    justify-content: space-between;   
+}
+
+
+.table-label {
+    padding: 12px;
+    text-align: left;
+}
+
+.table-value {
+    padding: 12px;
+    text-align: right;
+}
+
+.table-row:last-child {
+    font-weight: 800;
+}
+
+.order-button {
+    background-color: #deb993;
+    font-size: 15px;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 10px 0;
+}

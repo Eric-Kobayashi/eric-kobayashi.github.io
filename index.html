@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap">
+    <title>Coffee Masters</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title-bar">
+            <img src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png" alt="Coffee Masters Logo" class="title-element title-logo">
+            <h1 class="title-element">Coffee Masters</h1>
+        </div>
+        
+        <div class="central-widget">
+            <div class="item-widget block-widget">
+                <h2 class="widget-title">items</h2>
+                <ul class="item-list">
+                    <li class="item-content">
+                        <div class="item-number">1x</div>
+                        <div class="item-name">Cappuccino</div>
+                        <div class="item-price">$3.35</div>
+                        <div class="item-addon">
+                            <ul class="addon-list">
+                                <li class="addon-item">Lite foam</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-number">1x</div>
+                        <div class="item-name">Cappuccino</div>
+                        <div class="item-price">$3.85</div>
+                        <div class="item-addon">
+                            <ul class="addon-list">
+                                <li class="addon-item">Lite milk</li>
+                                <li class="addon-item">Double expresso</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-number">1x</div>
+                        <div class="item-name">Croissant</div>
+                        <div class="item-price">$2.45</div>
+                        <div class="item-addon">
+                            <ul class="addon-list">
+                                <li class="addon-item">Butter</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="name-widget block-widget">
+                <h2 class="widget-title">name</h2>
+                <div class="input-container">
+                    <label for="name-input" class="input-label">Name for order</label>
+                    <input type="text" class="input-field">
+                </div>
+            </div>
+
+            <div class="payment-widget block-widget">
+                <h2 class="widget-title">payment</h2>
+                <div class="input-container">
+                    <label for="card-number-input" class="input-label">Card number</label>
+                    <input type="text" class="input-field">
+                </div>
+                <div class="input-container">
+                    <label for="card-cvv-input" class="input-label">CVV number</label>
+                    <input type="text" class="input-field cvv-field">
+                </div>
+            </div>
+        </div>
+
+        <div class="cashier-widget">
+            <table class="cashier-table">
+                <tr class="table-row">
+                    <td class="table-label">Subtotal:</td>
+                    <td class="table-value">$9.65</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-label">Tax:</td>
+                    <td class="table-value">$0.82</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-label">Total:</td>
+                    <td class="table-value">$10.47</td>
+                </tr>
+            </table>
+        </div>
+
+        <button class="order-button">Place order</button>
+    </div>
+</body>
+</html>
