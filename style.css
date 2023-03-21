@@ -1,202 +1,81 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.container {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #efefef;
-    display: flex;
-    flex-direction: column;
-    margin: -5px;
-    padding: 0;
+h1 {
+  text-align: center;
+  margin-bottom: 0;
 }
 
-.title-bar {
-    display: flex;
-    background-color: #43281c;
-    color: #fbf2c0;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    position: relative;
-    margin: -10px;
+hr {
+  width: 50%;
 }
 
-.title-logo {
-    max-width: 25px;
-    max-height: 25px;
-    margin-right: 6px;
+.guesses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes spin {
-    0% { transform: rotate(-10deg); }
-    100% { transform: rotate(10deg); }
+.word {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
 }
 
-.title-logo:hover {
-    animation: spin 0.25s ease 4;
+.word:first-child {
+  margin-top: 40px;
 }
 
-.title-element {
-    display: inline;
-    font-size: 24px;
+.letter {
+  width: 50px;
+  height: 50px;
+  border: 4px solid lightgray;
+  font-family: "Open Sans", sans-serif;
+  font-size: 25pt;
+  font-weight: 1000;
+  text-transform: uppercase;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.central-widget {
-    display: grid;
-    padding: 30px 0;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-    "left-column top-right-column"
-    "left-column bottom-right-column";
+.hidden {
+  color: transparent;
 }
 
-.block-widget {
-    background-color: #eee1d5;
-    padding: 15px 15px 15px 15px;
-    margin: 10px 15px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+@keyframes shake-shack {
+  0% {
+    transform: translate(-4px, 0px);
+  }
+  100% {
+    transform: translate(4px, 0px);
+  }
 }
 
-.widget-title {
-    margin: 10px 0;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 500;
-    color: #885a2d;
+.notAWord {
+  animation: shake-shack 0.1s ease-in-out infinite alternate;
 }
 
-.item-widget {
-    grid-area: left-column;
+.correctLetter {
+  color: whitesmoke;
+  background-color: darkgreen;
 }
 
-.item-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
+.partialCorrectLetter {
+  color: whitesmoke;
+  background-color: darkgoldenrod;
 }
 
-.item-content {
-    display: grid;
-    grid-template-columns: 1fr 8fr 1fr;
-    grid-template-areas: 
-    "left-column mid-column right-column"
-    ". bottom-row .";
-    border-bottom: #d7bda8 2px solid;
-    padding: 10px 0;
+.incorrectLetter {
+  color: whitesmoke;
+  background-color: gray;
 }
 
-.item-content:last-child {
-    border-bottom: none;
-}
-
-
-.item-number {
-    grid-area: left-column;
-}
-
-.item-name {
-    font-weight: 800;
-    grid-area: mid-column;
-}
-
-.item-price {
-    font-weight: 800;
-    grid-area: right-column;
-}
-
-.item-addon {
-    color: #B08968;
-    font-size: 15px;
-    text-transform: capitalize;
-    grid-area: bottom-row;
-}
-
-.addon-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 5px 0;
-}
-
-.addon-item {
-    margin: 5px 0;
-}
-
-.addon-item:last-child {
-    margin: 0;
-}
-
-.name-widget {
-    grid-area: top-right-column;
-}
-
-.input-container {
-    position: relative;
-}
-
-.input-label {
-    font-weight: 400;
-    font-size: 12px;
-    position: absolute;
-    top: -2px;
-    left: 25px;
-    padding: 4px;
-    color: #885a2d;
-    background-color: #eee1d5;
-}
-
-.input-field {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #885a2d;
-    border-radius: 25px;
-    box-sizing: border-box;
-    background-color: transparent;
-}
-
-.input-field.cvv-field {
-    width: 40%;
-}
-
-.payment-widget {
-    grid-area: bottom-right-column;
-}
-
-.cashier-widget {
-    display: flex;
-    margin: 20px 0;
-    align-content: center;
-    justify-content: center;
-}
-
-.cashier-table {
-    width: 40%;
-    justify-content: space-between;   
-}
-
-
-.table-label {
-    padding: 12px;
-    text-align: left;
-}
-
-.table-value {
-    padding: 12px;
-    text-align: right;
-}
-
-.table-row:last-child {
-    font-weight: 800;
-}
-
-.order-button {
-    background-color: #deb993;
-    font-size: 15px;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    margin: 10px 0;
+#loading {
+  text-align: center;
 }
