@@ -2,13 +2,20 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 h1 {
   text-align: center;
   margin-bottom: 0;
+  font-family: serif;
+  letter-spacing: 0.1em;
 }
 
 hr {
-  width: 50%;
+  width: 80%;
 }
 
 .guesses {
@@ -45,7 +52,7 @@ hr {
 }
 
 .hidden {
-  color: transparent;
+  visibility: hidden;
 }
 
 @keyframes shake-shack {

@@ -1,6 +1,7 @@
 let answer;
 let typed = "";
 let currentTry = 0;
+const ROUNDS = 6;
 
 async function treatButton(event) {
   let key = event.key;
@@ -89,19 +90,16 @@ function treatIncorrectLetter(index) {
 }
 
 async function isAWord(word) {
-  loading();
+  toggleLoading(false);
   let validateResponse = await fetch(
     "https://words.dev-apis.com/validate-word",
     {
       method: "POST",
       body: JSON.stringify({ word: word }),
-      headers: {
-        "Content-Type": "application/json",
-      },
     }
   );
   let validate = await validateResponse.json();
-  loaded();
+  toggleLoading(true);
   return validate["validWord"];
 }
 
@@ -123,7 +121,7 @@ function treatCorrect() {
 
 function treatIncorrect() {
   words = document.querySelectorAll(".word");
-  if (currentTry == 5) {
+  if (currentTry == ROUNDS - 1) {
     alert(`残念でした。正解は${answer}です。`);
     document.removeEventListener("keydown", treatButton);
   }
@@ -147,34 +145,29 @@ async function retreiveAnswer() {
   let wordResponse = await fetch("https://words.dev-apis.com/word-of-the-day");
   let word = await wordResponse.json();
   answer = word["word"];
-  loaded();
+  toggleLoading(true);
 }
 
-function loading() {
+function toggleLoading(isLoaded) {
   let loading = document.querySelector("#loading");
-  loading.classList.remove("hidden");
-}
-
-function loaded() {
-  let loading = document.querySelector("#loading");
-  loading.classList.add("hidden");
+  loading.classList.toggle("hidden", isLoaded);
 }
 
 function addDisplay() {
   let currentLetter = document.querySelector(".untyped");
-  currentLetter.classList.remove("untyped");
+  currentLetter.classList.toggle("untyped", false);
   currentLetter.textContent = typed[typed.length - 1];
 }
 
 function deleteDisplay() {
   let letters = document.querySelectorAll(".letter:not(.untyped)");
   let currentLetter = letters[letters.length - 1];
-  currentLetter.classList.add("untyped");
+  currentLetter.classList.toggle("untyped", true);
   currentLetter.textContent = "";
 }
 
 async function main() {
-  loading();
+  toggleLoading(false);
   await retreiveAnswer();
   document.addEventListener("keydown", treatButton);
   for (let letter of document.querySelectorAll(".letter")) {
